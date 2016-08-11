@@ -59,13 +59,15 @@ public class NextActivity extends AppCompatActivity implements Callback<StackOve
     }
 
     private void showDialog(){
-        dialog = new ProgressDialog(this);
-        dialog.setMessage("loading...");
-        dialog.show();
+        if(dialog == null || (!dialog.isShowing())){
+            dialog = new ProgressDialog(this);
+            dialog.setMessage("loading...");
+            dialog.show();
+        }
     }
 
     private void dismissDialog(){
-        if(dialog != null && dialog.isShowing()){
+        if(dialog != null && (dialog.isShowing())){
             dialog.dismiss();
         }
     }
