@@ -4,7 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface StackOverflowAPI {
+public interface APIService {
 
     /**
      * https://api.stackexchange.com/search?order=desc&sort=activity&tagged=android&site=stackoverflow
@@ -16,4 +16,11 @@ public interface StackOverflowAPI {
      */
     @GET("/search?")
     Call<StackOverflowQuestions> loadQuestions(@Query("order") String order, @Query("sort") String sort, @Query("tagged") String tags, @Query("site") String site);
+
+    /**
+     * http://www.thomas-bayer.com/sqlrest/CUSTOMER/
+     * @return
+     */
+    @GET("/sqlrest/CUSTOMER")
+    Call<CustomerList> loadCustomers();
 }

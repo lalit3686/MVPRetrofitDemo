@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack {
 
     @Override
     public void startMainActivity() {
-        startActivity(new Intent(this, NextActivity.class));
+        startActivity(new Intent(this, RetrofitActivity.class));
     }
 
     @Override
